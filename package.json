@@ -1,0 +1,40 @@
+{
+  "name": "react-native-starter-kit",
+  "description": "React Native Starter Kit with Redux - crossplatform for iOS and Android",
+  "version": "0.3.0",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "react",
+    "redux",
+    "starter",
+    "boilerplate",
+    "offline-first",
+    "offline",
+    "persist",
+    "asyncstorage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philipshurpik/react-native-starter-kit"
+  },
+  "author": {
+    "name": "Philip Shurpik",
+    "email": "philip.shurpik@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-native": "^0.30.0",
+    "react-native-router-flux": "^3.32.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.0",
+    "redux-persist": "^3.2.2",
+    "redux-thunk": "^2.1.0"
+  }
+}
