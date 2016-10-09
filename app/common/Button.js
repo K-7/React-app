@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { colours, dimensions, fonts } from './themes';
 
 export default class Button extends Component {
 	render() {
@@ -9,14 +10,16 @@ export default class Button extends Component {
 	}
 }
 
-const styles = StyleSheet.create({
+var styles = StyleSheet.create({
 	button: {
-		marginBottom: 10,
-		padding: 10,
-		backgroundColor: 'orange'
+		marginBottom: dimensions.controlMargin,
+		padding: dimensions.controlPadding,
+		backgroundColor: colours.fillDarkBlue,		
+	    justifyContent: 'center',
+	    alignItems: 'center',
 	},
 	text: {
-		color: 'white',
-		fontSize: 16
+		color: colours.textWhite,
+		fontSize: fonts.sizeRegular,
 	}
 });

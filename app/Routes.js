@@ -12,11 +12,11 @@ const reducerCreate = params => (state, action) => Reducer(params)(state, action
 const Routes = ({loading, needSignIn}) => (
     loading ?
         <Loader/> :
-        <Router createReducer={reducerCreate}>
-            <Scene key="loginPage" initial={needSignIn} component={LoginPage} title="Login" type="reset"/>
+        <Router createReducer={reducerCreate} showNavigationBar={false}>
+            <Scene key="loginPage" initial={needSignIn} component={LoginPage} title="Login" type="reset" hideNavBar/>
 
-            <Scene key="homePage" initial={!needSignIn} component={HomePage} title="Home" type="replace"/>
-            <Scene key="profilePage" component={ProfilePage} title="Profile"/>
+            <Scene key="homePage" initial={!needSignIn} component={HomePage} title="Home" type="replace" hideNavBar/>
+            <Scene key="profilePage" component={ProfilePage} title="Profile" hideNavBar/>
         </Router>
 );
 

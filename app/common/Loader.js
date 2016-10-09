@@ -1,32 +1,58 @@
-import React, {Component, PropTypes} from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import React, { Component, PropTypes } from 'react';
+import { View, Text, StyleSheet, Image, ListView, Dimensions } from 'react-native';
+import { colours, dimensions, fonts } from './themes';
+import {loaderIcon} from 'app/common/commonStyles';
 
 var styles = StyleSheet.create({
     container: {
         position: 'absolute',
+        flex: 1,
         top: 0,
         bottom: 0,
         left: 0,
         right: 0,
-        backgroundColor: 'rgba(150,150,150,0.2)',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    text: {
-        padding: 10,
-        fontSize: 25,
-        alignSelf: 'center',
-        color: 'orange'
-    }
+    curaBrand: {
+        backgroundColor: colours.transparent,
+        alignItems: 'center',
+    },
+    curaIcon: {
+        width: 80,
+        height: 300,
+        marginBottom: dimensions.controlMargin,
+        alignItems: 'stretch',
+    },
+    brandText:  {
+        color: colours.textWhite,
+        textAlign: 'center',
+        fontFamily: 'System',
+    },
+    lineBreak: {
+        backgroundColor: colours.textWhite,
+        height: 1,
+        width: 360,
+        margin: dimensions.controlMargin,
+    },
+    loaderIcon
 });
 
 const Loader = () => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>
-                {'Loading...'}
-            </Text>
-        </View>
+        <Image source={require('./images/Splash/splash_bg.imageset/01.2-NARAYANA-HEALTH-Ipad-SplashScreen-BackGround-Divide.png')} style={styles.container}>
+            <View style={ styles.curaBrand }>
+                <Image style={ styles.curaIcon } source={require('./images/Splash/Logo.imageset/02-CURA Icon-Divide.png')} />
+                <Text style={ styles.brandText }>
+                    <Text style={{ fontSize: fonts.sizeBrandTitle, fontWeight: fonts.weightThin }} >Cura</Text>
+                </Text>
+                <View style={ styles.lineBreak }></View>
+                <Text style={ styles.brandText }>
+                    <Text style={{ fontSize: fonts.sizeBrandSubTitle, fontWeight: fonts.weightLight }}>AFFORDABLE, CONTINOUS, PERSONALIZED.</Text>
+                </Text>
+            </View>
+            <Image style={ styles.loaderIcon } source={require('./images/Loader/loader.gif')} />
+        </Image>
     )
 };
 

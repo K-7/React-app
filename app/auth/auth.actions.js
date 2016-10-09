@@ -14,7 +14,7 @@ export const login = username => {
                 routes.homePage();
                 return dispatch(loginSuccess(username));
             }
-            return dispatch(loginFail(new Error('username field is required')));
+            return dispatch(loginFail(new Error('Password field is required!')));
         }, Math.random() * 1000 + 500)
     };
 };

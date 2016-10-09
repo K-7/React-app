@@ -19,7 +19,7 @@ class Login extends Component {
 
     constructor() {
         super();
-        this.state = {username: ''};
+        this.state = {password: ''};
     }
 
     render() {
@@ -28,12 +28,13 @@ class Login extends Component {
             <View style={[styles.container, styles.content]}>
                 <TextInput
                     style={styles.input}
-                    value={this.state.username}
+                    value={this.state.password}
+                    type="password"
                     autoCorrect={false}
-                    placeholder="username"
+                    placeholder="Password"
                     maxLength={140}
                     onSubmitEditing={() => this.onSubmit()}
-                    onChangeText={(username) => this.setState({username: username})}
+                    onChangeText={(password) => this.setState({password: password})}
                 />
                 <Button onPress={() => this.onSubmit()}>
                     Login
@@ -45,8 +46,8 @@ class Login extends Component {
     }
 
     onSubmit() {
-        this.props.login(this.state.username);
-        this.setState({username: ''});
+        this.props.login(this.state.password);
+        this.setState({password: ''});
     }
 }
 

@@ -1,40 +1,48 @@
-var HEADER_HEIGHT = 64;
+import { colours, dimensions, fonts } from './themes';
+
+var HEADER_HEIGHT = dimensions.headerHeight;
 
 module.exports = {
     container: {
-        flex: 1,
-        paddingTop: HEADER_HEIGHT + 150
+        flex: 1,        
+        justifyContent: 'center',
     },
     content: {
         flex: 1,
-        padding: 20
+        padding: dimensions.contentPadding,
     },
     footer: {
         position: 'absolute',
-        height: 100,
+        height: dimensions.footerHeight,
         bottom: 0,
         left: 0,
         right: 0
     },
     input: {
-        height: 40,
-        padding: 10,
-        marginBottom: 10,
-        borderColor: 'orange',
+        height: dimensions.inputHeight,
+        padding: dimensions.controlPadding,
+        marginBottom: dimensions.controlMargin,
+        borderColor: colours.fillBlue,
         borderWidth: 1,
         borderStyle: 'solid'
     },
     label: {
-        color: 'orange',
-        padding: 5,
-        fontWeight: "700",
+        color: colours.textDarkBlue,
+        padding: dimensions.labelPadding,
+        fontWeight: fonts.weightBold,
         fontStyle: 'italic'
     },
     errorText: {
-        backgroundColor: 'red',
-        color: 'white',
-        padding: 5,
-        fontWeight: "700",
+        color: colours.errorCoral,
+        padding: dimensions.labelPadding,
+        fontWeight: fonts.weightBold,
         fontStyle: 'italic'
+    },
+    loaderIcon: {
+        width: 70,
+        height: 70,
+        margin: dimensions.controlMargin,
+        marginTop: 40,
+        alignItems: 'stretch',
     }
 };
