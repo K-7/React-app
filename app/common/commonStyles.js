@@ -6,6 +6,7 @@ module.exports = {
     container: {
         flex: 1,        
         justifyContent: 'center',
+        alignItems: 'center',
     },
     content: {
         flex: 1,
@@ -38,11 +39,5 @@ module.exports = {
         fontWeight: fonts.weightBold,
         fontStyle: 'italic'
     },
-    loaderIcon: {
-        width: 70,
-        height: 70,
-        margin: dimensions.controlMargin,
-        marginTop: 40,
-        alignItems: 'stretch',
-    }
+    
 };

@@ -18,6 +18,7 @@ module.exports = {
 		labelPadding: 5,
 		footerHeight: 100,
 		inputHeight: 40,
+		keypadWidth: 200,
 	},
 
 	fonts : 	{

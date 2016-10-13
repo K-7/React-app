@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+import Loader from 'app/common/Loader';
+
 import { colours, dimensions, fonts } from 'app/common/themes';
 import {loaderIcon} from 'app/common/commonStyles';
 
@@ -44,17 +46,18 @@ class Splash extends Component {
         login: PropTypes.func.isRequired
     };
 
-    constructor() {
-        super();
-        this.state = {password: ''};
+    componentDidMount() {
+        this.props.login();
     }
 
     render()    {
         const {errorStatus, loading} = this.props;
         return (
-            <Image source={require('app/common/images/Splash/splash_bg.imageset/01.2-NARAYANA-HEALTH-Ipad-SplashScreen-BackGround-Divide.png')} style={styles.container}>
+            <Image
+                source={require('app/common/images/Splash/splash_bg.imageset/01.2-NARAYANA-HEALTH-Ipad-SplashScreen-BackGround-Divide.png')}
+                style={styles.container}>
                 <View style={ styles.curaBrand }>
-                    <Image style={ styles.curaIcon } source={require('app/common/images/Splash/Logo.imageset/02-CURA Icon-Divide.png')} />
+                    <Image style={ styles.curaIcon } source={ require('app/common/images/Splash/Logo.imageset/02-CURA Icon-Divide.png') } />
                     <Text style={ styles.brandText }>
                         <Text style={{ fontSize: fonts.sizeBrandTitle, fontWeight: fonts.weightThin }} >Cura</Text>
                     </Text>
@@ -63,7 +66,9 @@ class Splash extends Component {
                         <Text style={{ fontSize: fonts.sizeBrandSubTitle, fontWeight: fonts.weightLight }}>AFFORDABLE, CONTINOUS, PERSONALIZED.</Text>
                     </Text>
                 </View>
-                <Image style={ styles.loaderIcon } source={require('app/common/images/Loader/loader.gif')} />
+                <Loader
+                    onRetry={() => this.props.login()}
+                />
             </Image>
         )
     }    

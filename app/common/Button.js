@@ -15,8 +15,6 @@ var styles = StyleSheet.create({
 		marginBottom: dimensions.controlMargin,
 		padding: dimensions.controlPadding,
 		backgroundColor: colours.fillDarkBlue,		
-	    justifyContent: 'center',
-	    alignItems: 'center',
 	},
 	text: {
 		color: colours.textWhite,

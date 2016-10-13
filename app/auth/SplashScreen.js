@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({login: actions.login}, dispatch);
+    return bindActionCreators({login: actions.admin_login}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Splash);
