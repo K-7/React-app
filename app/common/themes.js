@@ -4,7 +4,8 @@ module.exports = {
 		
 		fillBlue: '#639BBA',
 		fillDarkBlue: '#4E7B94',
-
+	
+		textBlue: '#639BBA',
 		textDarkBlue: '#4E7B94',
 		textWhite: 'white',
 
@@ -19,6 +20,8 @@ module.exports = {
 		footerHeight: 100,
 		inputHeight: 40,
 		keypadWidth: 200,
+		tilePadding: 20,
+		tileMargin: 20,
 	},
 
 	fonts : 	{

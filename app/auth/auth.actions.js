@@ -15,7 +15,7 @@ export const login = ( username, password ) => {
 
         setTimeout(() => {
             if (password.length) {
-                routes.homePage();
+                routes.profilePage();
                 return dispatch(loginSuccess(username, password));
             }
             return dispatch(loginFail(new Error('Password field is required!')));

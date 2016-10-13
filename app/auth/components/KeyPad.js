@@ -50,7 +50,7 @@ class KeyPadInput extends Component	{
 				style={styles.keyPadInput}
 				maxLength={1}
 				value={this.props.children}
-				secureTextEntry={true}
+				secureTextEntry={this.props.secureTextEntry}
 				placeholder="o"
 			/>
 	}
@@ -69,10 +69,14 @@ class KeyPad extends Component	{
 		return (
 			<View {...this.props} style={styles.container}>
 				<View flexDirection='row'>
-					<KeyPadInput>{this.state.password.length > 0? this.state.password[0]: ''}</KeyPadInput>
-					<KeyPadInput>{this.state.password.length > 1? this.state.password[1]: ''}</KeyPadInput>
-					<KeyPadInput>{this.state.password.length > 2? this.state.password[2]: ''}</KeyPadInput>
-					<KeyPadInput>{this.state.password.length > 3? this.state.password[3]: ''}</KeyPadInput>
+					<KeyPadInput secureTextEntry={this.props.secureTextEntry}>
+						{this.state.password.length > 0? this.state.password[0]: ''}</KeyPadInput>
+					<KeyPadInput secureTextEntry={this.props.secureTextEntry}>
+						{this.state.password.length > 1? this.state.password[1]: ''}</KeyPadInput>
+					<KeyPadInput secureTextEntry={this.props.secureTextEntry}>
+						{this.state.password.length > 2? this.state.password[2]: ''}</KeyPadInput>
+					<KeyPadInput secureTextEntry={this.props.secureTextEntry}>
+						{this.state.password.length > 3? this.state.password[3]: ''}</KeyPadInput>
 				</View>
 
 				<View flexDirection='row'>

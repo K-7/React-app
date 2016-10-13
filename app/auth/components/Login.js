@@ -44,10 +44,8 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
-            user: {
-                username: '100831',
-                employee_name: 'Dr. Shalini Rajesh',
-            },
+            username: '100831',
+            employee_name: 'Dr. Shalini Rajesh',
             password: ''
         };
     }
@@ -83,12 +81,13 @@ class Login extends Component {
         const {errorStatus, loading} = this.props;
         return (
             <View style={[styles.container, styles.content]}>
-                <Text style={[styles.text, styles.heading]}>Good Morning, {this.state.user.employee_name}</Text>
+                <Text style={[styles.text, styles.heading]}>Good Morning, {this.state.employee_name}</Text>
                 <Text style={[styles.text, styles.subHeading]}>Enter Authentication Code</Text>
                 <KeyPad
                     password={this.state.password}
                     onValueUpdated={(password) => this.setState({password: password}, this.submit)}
                     onSubmit={() => this.onSubmit()}
+                    secureTextEntry={true}
                 />
                 <View flexDirection='row'>
                     <Button>Back</Button>
@@ -110,12 +109,10 @@ class Login extends Component {
     }
 
     onSubmit() {
-        this.props.login(this.state.user.username, this.state.password);
+        this.props.login(this.state.username, this.state.password);
         this.setState({
-            user: {
-                username: '100831',
-                employee_name: 'Dr. Shalini Rejesh',
-            },
+            username: '100831',
+            employee_name: 'Dr. Shalini Rejesh',
             password: ''
         });
     }
